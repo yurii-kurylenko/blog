@@ -1,0 +1,93 @@
+# Hugo configuration for https://blog.mracovado.com/
+# Reference: https://gohugo.io/configuration/
+
+# Canonical site URL. Every absolute URL (canonical link, sitemap, RSS, robots) is built from this.
+baseURL = "https://blog.mracovado.com/"
+
+# English only: there is deliberately no [languages] block and language content is
+# served from the site root, so nothing but English content and navigation is emitted.
+defaultContentLanguage = "en"
+locale = "en-US"
+
+# TODO: replace with your blog title.
+title = "AI, Software & Architecture"
+
+theme = "PaperMod"
+enableRobotsTXT = true
+
+# No `timeZone` is set on purpose: dates use Hugo's default (UTC) without an override.
+
+[params]
+  # TODO: replace with a one-line description of your blog.
+  description = "Notes on AI, software development, and software architecture."
+
+  # Marks the site as production so robots metadata is "index, follow" and
+  # PaperMod renders production-ready asset/meta tags.
+  env = "production"
+  defaultTheme = "auto"
+  DateFormat = "January 2, 2006"
+
+  # --- PaperMod defaults that suit a technical blog ---
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  UseHugoToc = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowRssButtonInSectionTermList = true
+  ShowShareButtons = false
+  ShowWordCount = false
+
+  # TODO: replace both URLs with your own profiles.
+  [[params.socialIcons]]
+    name = "github"
+    title = "GitHub"
+    url = "https://github.com/your-github-username"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    title = "LinkedIn"
+    url = "https://www.linkedin.com/in/your-linkedin-profile"
+
+# Output formats: RSS feeds for lists/taxonomies, plus the JSON index that
+# PaperMod's client-side search reads.
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+# Sitemap is on by default; it is listed here only to make that explicit.
+[sitemap]
+  disable = false
+
+[pagination]
+  pagerSize = 10
+
+[markup]
+  [markup.highlight]
+    # PaperMod's stylesheet expects class-based Chroma output.
+    noClasses = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+  [markup.goldmark.renderer]
+    # Allow raw HTML inside Markdown posts (embeds, custom snippets).
+    unsafe = true
+
+[[menu.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 20
+
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 30

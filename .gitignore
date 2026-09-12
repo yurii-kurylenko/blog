@@ -1,0 +1,9 @@
+# Generated site output (published by the build/deploy step, never committed)
+/public/
+
+# Hugo's asset cache and build lock
+/resources/_gen/
+.hugo_build.lock
+
+# OS cruft
+.DS_Store
