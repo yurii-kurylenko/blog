@@ -9,8 +9,7 @@ baseURL = "https://blog.mracovado.com/"
 defaultContentLanguage = "en"
 locale = "en-US"
 
-# TODO: replace with your blog title.
-title = "AI, Software & Architecture"
+title = "Yurii’s Tech blog"
 
 theme = "PaperMod"
 enableRobotsTXT = true
